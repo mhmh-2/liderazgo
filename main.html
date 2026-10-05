@@ -1,2 +1,534 @@
-EN progreso PE
-YA
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esperanza Viva - Organización Sin Fines de Lucro</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .modal-active {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-brand-600/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">Esperanza<span class="text-brand-600">Viva</span></span>
+                </a>
+
+                <!-- Nav Menu Desktop -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Inicio</a>
+                    <a href="#galeria" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Galería</a>
+                    <a href="#donaciones" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Donaciones</a>
+                    <a href="#contacto" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Contacto</a>
+                </nav>
+
+                <!-- CTA Button Desktop -->
+                <div class="hidden md:flex items-center">
+                    <a href="#donaciones" class="px-5 py-2.5 rounded-full bg-slate-800 hover:bg-slate-900 text-white font-semibold text-sm shadow-md transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-hand-holding-heart mr-2 text-brand-500"></i>Donación (Próximamente)
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Inicio</a>
+            <a href="#galeria" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Galería</a>
+            <a href="#donaciones" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Donaciones</a>
+            <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Contacto</a>
+            <a href="#donaciones" class="block w-full text-center mt-4 px-5 py-3 rounded-xl bg-slate-800 text-white font-semibold shadow-md">
+                <i class="fa-solid fa-hand-holding-heart mr-2 text-brand-500"></i>Módulo de Donaciones
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- SECCIÓN INTRODUCCIÓN / HERO -->
+        <section id="inicio" class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-slate-100/70 via-slate-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Contenido Hero -->
+                    <div class="lg:col-span-7 text-center lg:text-left space-y-8">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-sm font-semibold">
+                            <span class="flex h-2 w-2 rounded-full bg-brand-500 animate-ping"></span>
+                            Iniciativa social y desarrollo comunitario
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Juntos construimos un <span class="bg-gradient-to-r from-brand-600 to-emerald-500 bg-clip-text text-transparent">futuro con esperanza</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Somos una organización dedicada a brindar oportunidades, educación y desarrollo integral a comunidades vulnerables. Descubre nuestros proyectos y sé parte del cambio.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#galeria" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-center shadow-lg shadow-brand-600/30 transition-all transform hover:-translate-y-0.5">
+                                <i class="fa-solid fa-images mr-2"></i>Explorar Galería
+                            </a>
+                            <a href="#donaciones" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-semibold text-center shadow-sm transition-all">
+                                <i class="fa-solid fa-circle-info mr-2 text-slate-400"></i>Info de Donaciones
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder Imagen Hero -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <div class="absolute -top-4 -left-4 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl"></div>
+                            <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+                            
+                            <!-- Placeholder SVG / Canvas Styled Container -->
+                            <div class="relative rounded-3xl shadow-2xl bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 w-full h-[400px] border-4 border-white flex flex-col items-center justify-center p-8 text-center">
+                                <div class="w-20 h-20 rounded-2xl bg-slate-300/80 text-slate-500 flex items-center justify-center text-3xl mb-4 shadow-inner">
+                                    <i class="fa-regular fa-image"></i>
+                                </div>
+                                <span class="font-bold text-slate-700 text-xl">Imagen Principal Placeholder</span>
+                                <span class="text-sm text-slate-500 mt-2 max-w-xs">Representación gráfica de nuestra misión comunitaria</span>
+                                <span class="inline-block mt-4 text-xs font-semibold px-3 py-1 rounded-full bg-slate-300/60 text-slate-600">600 x 400 px</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tarjetas Misión, Visión e Impacto -->
+                <div class="grid md:grid-cols-3 gap-8 mt-20">
+                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Nuestra Misión</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Proporcionar recursos esenciales, programas de desarrollo integral y herramientas educativas que permitan a las familias prosperar de forma autónoma.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Nuestra Visión</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Un mundo donde cada niño y niña tenga acceso a oportunidades equitativas de salud, educación y desarrollo personal sin importar su origen.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Nuestro Impacto</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Más de 10,000 personas beneficiadas este año mediante comedores comunitarios, talleres de formación laboral y becas de estudio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN GALERÍA DE FOTOS (PLACEHOLDERS) -->
+        <section id="galeria" class="py-20 bg-slate-100/60 border-y border-slate-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-600 font-semibold tracking-wider uppercase text-sm">Registro Fotográfico</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Galería de Proyectos</h2>
+                    <p class="text-slate-600 mt-4 text-lg">
+                        Muestra de las actividades e iniciativas desarrolladas en nuestras distintas áreas de acción.
+                    </p>
+                </div>
+
+                <!-- Botones de Filtro -->
+                <div class="flex flex-wrap justify-center gap-3 mb-10">
+                    <button onclick="filterGallery('todos', this)" class="filter-btn px-5 py-2 rounded-full bg-brand-600 text-white font-semibold text-sm shadow-sm transition-all">Todos</button>
+                    <button onclick="filterGallery('categoria-a', this)" class="filter-btn px-5 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-200/60 border border-slate-200 font-semibold text-sm transition-all">Educación</button>
+                    <button onclick="filterGallery('categoria-b', this)" class="filter-btn px-5 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-200/60 border border-slate-200 font-semibold text-sm transition-all">Nutrición</button>
+                    <button onclick="filterGallery('categoria-c', this)" class="filter-btn px-5 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-200/60 border border-slate-200 font-semibold text-sm transition-all">Salud</button>
+                </div>
+
+                <!-- Grid de Fotos Placeholders -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+                    
+                    <!-- Item Placeholder 1 -->
+                    <div class="gallery-item categoria-a bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200" 
+                         onclick="openModal('Foto Placeholder 1 - Proyecto Educación', 'Educación', 'Demostración de los talleres de capacitación comunitaria y lecturas infantiles.')">
+                        <div class="relative overflow-hidden h-60 bg-gradient-to-br from-slate-200 via-slate-300 to-slate-200 flex flex-col items-center justify-center p-4 text-slate-500 group-hover:from-slate-300 group-hover:to-slate-400 transition-colors">
+                            <i class="fa-regular fa-image text-4xl mb-2 text-slate-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="font-bold text-slate-700">Foto Placeholder 1</span>
+                            <span class="text-xs text-slate-500">600 x 400 px</span>
+                            <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="p-3 rounded-full bg-white/90 text-slate-900 text-xl"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Educación</span>
+                            <h4 class="text-lg font-bold text-slate-900 mt-1">Talleres Escolares Comunitarios</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item Placeholder 2 -->
+                    <div class="gallery-item categoria-b bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200"
+                         onclick="openModal('Foto Placeholder 2 - Proyecto Nutrición', 'Nutrición', 'Programa de alimentación integral y distribución de raciones.')">
+                        <div class="relative overflow-hidden h-60 bg-gradient-to-br from-slate-200 via-slate-300 to-slate-200 flex flex-col items-center justify-center p-4 text-slate-500 group-hover:from-slate-300 group-hover:to-slate-400 transition-colors">
+                            <i class="fa-regular fa-image text-4xl mb-2 text-slate-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="font-bold text-slate-700">Foto Placeholder 2</span>
+                            <span class="text-xs text-slate-500">600 x 400 px</span>
+                            <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="p-3 rounded-full bg-white/90 text-slate-900 text-xl"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Nutrición</span>
+                            <h4 class="text-lg font-bold text-slate-900 mt-1">Entrega de Alimentos Diarios</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item Placeholder 3 -->
+                    <div class="gallery-item categoria-c bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200"
+                         onclick="openModal('Foto Placeholder 3 - Proyecto Salud', 'Salud', 'Atención de salud preventiva y brigadas médicas móviles.')">
+                        <div class="relative overflow-hidden h-60 bg-gradient-to-br from-slate-200 via-slate-300 to-slate-200 flex flex-col items-center justify-center p-4 text-slate-500 group-hover:from-slate-300 group-hover:to-slate-400 transition-colors">
+                            <i class="fa-regular fa-image text-4xl mb-2 text-slate-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="font-bold text-slate-700">Foto Placeholder 3</span>
+                            <span class="text-xs text-slate-500">600 x 400 px</span>
+                            <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="p-3 rounded-full bg-white/90 text-slate-900 text-xl"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Salud</span>
+                            <h4 class="text-lg font-bold text-slate-900 mt-1">Jornadas Médicas Preventivas</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item Placeholder 4 -->
+                    <div class="gallery-item categoria-a bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200"
+                         onclick="openModal('Foto Placeholder 4 - Equipamiento Educativo', 'Educación', 'Aulas digitales y recursos informáticos para la juventud.')">
+                        <div class="relative overflow-hidden h-60 bg-gradient-to-br from-slate-200 via-slate-300 to-slate-200 flex flex-col items-center justify-center p-4 text-slate-500 group-hover:from-slate-300 group-hover:to-slate-400 transition-colors">
+                            <i class="fa-regular fa-image text-4xl mb-2 text-slate-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="font-bold text-slate-700">Foto Placeholder 4</span>
+                            <span class="text-xs text-slate-500">600 x 400 px</span>
+                            <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="p-3 rounded-full bg-white/90 text-slate-900 text-xl"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Educación</span>
+                            <h4 class="text-lg font-bold text-slate-900 mt-1">Equipamiento e Informática</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item Placeholder 5 -->
+                    <div class="gallery-item categoria-b bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200"
+                         onclick="openModal('Foto Placeholder 5 - Huertos Sostenibles', 'Nutrición', 'Cultivo orgánico e iniciativas de sustentabilidad alimentaria.')">
+                        <div class="relative overflow-hidden h-60 bg-gradient-to-br from-slate-200 via-slate-300 to-slate-200 flex flex-col items-center justify-center p-4 text-slate-500 group-hover:from-slate-300 group-hover:to-slate-400 transition-colors">
+                            <i class="fa-regular fa-image text-4xl mb-2 text-slate-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="font-bold text-slate-700">Foto Placeholder 5</span>
+                            <span class="text-xs text-slate-500">600 x 400 px</span>
+                            <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="p-3 rounded-full bg-white/90 text-slate-900 text-xl"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Nutrición</span>
+                            <h4 class="text-lg font-bold text-slate-900 mt-1">Huertos Comunitarios</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item Placeholder 6 -->
+                    <div class="gallery-item categoria-c bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer border border-slate-200"
+                         onclick="openModal('Foto Placeholder 6 - Bienestar Emocional', 'Salud', 'Sesiones de apoyo psicológico y acompañamiento familiar.')">
+                        <div class="relative overflow-hidden h-60 bg-gradient-to-br from-slate-200 via-slate-300 to-slate-200 flex flex-col items-center justify-center p-4 text-slate-500 group-hover:from-slate-300 group-hover:to-slate-400 transition-colors">
+                            <i class="fa-regular fa-image text-4xl mb-2 text-slate-400 group-hover:scale-110 transition-transform"></i>
+                            <span class="font-bold text-slate-700">Foto Placeholder 6</span>
+                            <span class="text-xs text-slate-500">600 x 400 px</span>
+                            <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="p-3 rounded-full bg-white/90 text-slate-900 text-xl"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Salud</span>
+                            <h4 class="text-lg font-bold text-slate-900 mt-1">Atención Integral</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DONACIÓN (PLACEHOLDER) -->
+        <section id="donaciones" class="py-20 bg-slate-900 text-white relative">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-slate-800/90 border border-slate-700/70 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl">
+                    <!-- Decoración visual -->
+                    <div class="absolute top-0 right-0 -mr-12 -mt-12 w-48 h-48 bg-brand-500/10 rounded-full blur-2xl"></div>
+                    <div class="absolute bottom-0 left-0 -ml-12 -mb-12 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl"></div>
+
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-700/80 text-brand-400 font-semibold text-sm mb-6 border border-slate-600">
+                        <i class="fa-solid fa-clock text-brand-500"></i> Próximamente Disponible
+                    </div>
+
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        Sistema de Donaciones en Construcción
+                    </h2>
+
+                    <p class="text-slate-300 mt-6 text-lg max-w-2xl mx-auto leading-relaxed">
+                        Estamos integrando una pasarela de pagos segura y automatizada para que puedas realizar donaciones únicas o recurrentes (tarjetas, PayPal, transferencias directas) de manera rápida y confiable.
+                    </p>
+
+                    <!-- Formulario de Notificación Placeholder -->
+                    <div class="mt-10 max-w-md mx-auto">
+                        <p class="text-sm text-slate-400 font-medium mb-3">¿Deseas recibir un aviso cuando habilitemos las donaciones?</p>
+                        <form onsubmit="handleNotify(event)" class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" required placeholder="Tu correo electrónico" class="w-full px-5 py-3.5 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm">
+                            <button type="submit" class="px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm whitespace-nowrap shadow-md shadow-brand-600/20 transition-all">
+                                Avisarme
+                            </button>
+                        </form>
+                        <div id="notify-success" class="hidden mt-4 text-sm text-brand-400 bg-brand-950/40 border border-brand-800 p-3 rounded-xl">
+                            <i class="fa-solid fa-check-circle mr-1"></i> ¡Gracias! Te avisaremos apenas el módulo esté en funcionamiento.
+                        </div>
+                    </div>
+
+                    <!-- Iconos de pasarelas futuras -->
+                    <div class="mt-12 pt-8 border-t border-slate-700/60">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest block mb-4">Métodos que aceptaremos</span>
+                        <div class="flex justify-center items-center gap-6 text-2xl text-slate-500">
+                            <i class="fa-brands fa-cc-visa hover:text-slate-300 transition-colors" title="Visa"></i>
+                            <i class="fa-brands fa-cc-mastercard hover:text-slate-300 transition-colors" title="Mastercard"></i>
+                            <i class="fa-brands fa-paypal hover:text-slate-300 transition-colors" title="PayPal"></i>
+                            <i class="fa-solid fa-mobile-screen-button hover:text-slate-300 transition-colors" title="Billeteras Móviles"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MODAL LIGHTBOX INTERACTIVO -->
+        <div id="image-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4 transition-all duration-300">
+            <div class="relative max-w-3xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl">
+                <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-900/70 text-white flex items-center justify-center hover:bg-slate-900 transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+                <div class="relative h-[300px] sm:h-[380px] bg-gradient-to-br from-slate-200 via-slate-300 to-slate-200 flex flex-col items-center justify-center p-6 text-slate-600">
+                    <i class="fa-regular fa-image text-6xl text-slate-400 mb-3"></i>
+                    <span id="modal-placeholder-name" class="font-bold text-2xl text-slate-800 text-center">Foto Placeholder</span>
+                    <span class="text-sm text-slate-500 mt-1">Vista Previa Ampliada (600 x 400 px)</span>
+                </div>
+                <div class="p-6 bg-white">
+                    <span id="modal-category" class="text-xs font-bold uppercase tracking-wider text-brand-600">Categoría</span>
+                    <h3 id="modal-title" class="text-2xl font-bold text-slate-900 mt-1">Título de la Foto</h3>
+                    <p id="modal-desc" class="text-slate-600 text-sm mt-2">Descripción detallada del proyecto o actividad en cuestión.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER GLOBAL CON CONTACTO (AL FINAL DE TODAS LAS SECCIONES) -->
+    <footer id="contacto" class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Columna 1: Info Organización -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">Esperanza<span class="text-brand-500">Viva</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Iniciativa dedicada a transformar realidades mediante programas comunitarios, educación y nutrición.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="hover:text-brand-400 transition-colors">Inicio / Introducción</a></li>
+                        <li><a href="#galeria" class="hover:text-brand-400 transition-colors">Galería de Fotos</a></li>
+                        <li><a href="#donaciones" class="hover:text-brand-400 transition-colors">Módulo de Donaciones</a></li>
+                        <li><a href="#contacto" class="hover:text-brand-400 transition-colors">Contacto Directo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Información de Contacto Directo -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Contacto Directo</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="block text-slate-400 text-xs font-medium">Número de Teléfono / WhatsApp</span>
+                                <a href="tel:+51987654321" class="text-white hover:text-brand-400 font-bold transition-colors text-base">+51 987 654 321</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-slate-400 text-xs font-medium">Correo Electrónico</span>
+                                <a href="mailto:contacto@esperanzaviva.org" class="text-white hover:text-brand-400 font-bold transition-colors text-base break-all">contacto@esperanzaviva.org</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="block text-slate-400 text-xs font-medium">Dirección</span>
+                                <span class="text-slate-300 font-medium">Av. Las Flores 456, Arequipa, Perú</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Redes Sociales -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Síguenos</h4>
+                    <p class="text-sm text-slate-400 mb-4">Conéctate con nosotros en redes sociales:</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition-all"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Derechos de Autor -->
+            <div class="pt-8 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Esperanza Viva ONG. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-400">Política de Privacidad</a>
+                    <a href="#" class="hover:text-slate-400">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            });
+        });
+
+
+        function handleNotify(e) {
+            e.preventDefault();
+            const successBox = document.getElementById('notify-success');
+            successBox.classList.remove('hidden');
+            e.target.reset();
+        }
+
+
+        function filterGallery(category, button) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = 'filter-btn px-5 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-200/60 border border-slate-200 font-semibold text-sm transition-all';
+            });
+            button.className = 'filter-btn px-5 py-2 rounded-full bg-brand-600 text-white font-semibold text-sm shadow-sm transition-all';
+
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'todos' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(placeholderTitle, category, description) {
+            document.getElementById('modal-placeholder-name').textContent = placeholderTitle;
+            document.getElementById('modal-title').textContent = placeholderTitle;
+            document.getElementById('modal-category').textContent = category;
+            document.getElementById('modal-desc').textContent = description;
+            
+            const modal = document.getElementById('image-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.classList.remove('modal-active');
+        }
+
+        document.getElementById('image-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'image-modal') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
